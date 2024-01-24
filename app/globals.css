@@ -2,32 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+    font-family: "yekanbakh-thin";
+    src: url("/assets/fonts/YekanBakh-Thin.woff"), format(".woff");
+    font-weight: 100;
+}
+@font-face {
+    font-family: "yekanbakh-light";
+    src: url("/assets/fonts/YekanBakh-Light.woff"), format(".woff");
+    font-weight: 300;
+}
+@font-face {
+    font-family: "yekanbakh-regular";
+    src: url("/assets/fonts/YekanBakh-Regular.woff"), format(".woff");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "yekanbakh-semibold";
+    src: url("/assets/fonts/YekanBakh-SemiBold.woff"), format(".woff");
+    font-weight: 600;
+}
+@font-face {
+    font-family: "yekanbakh-bold";
+    src: url("/assets/fonts/YekanBakh-Bold.woff"), format(".woff");
+    font-weight: 700;
+}
+@font-face {
+    font-family: "yekanbakh-extrabold";
+    src: url("/assets/fonts/YekanBakh-ExtraBold.woff"), format(".woff");
+    font-weight: 800;
+}
+@font-face {
+    font-family: "yekanbakh-black";
+    src: url("/assets/fonts/YekanBakh-Black.woff"), format(".woff");
+    font-weight: 900;
+}
+@font-face {
+    font-family: "yekanbakh-extrablack";
+    src: url("/assets/fonts/YekanBakh-ExtraBlack.woff"), format(".woff");
+    font-weight: 950;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html {
+    font-family: yekanbakh-regular;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+:root[data-theme="dark"] {
+    --background-color: #fff;
+    --content-color: #000;
 }
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+:root[data-theme="light"] {
+    --background-color: #000;
+    --content-color: #fff;
 }
